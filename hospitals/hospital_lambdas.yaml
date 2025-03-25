@@ -6,3 +6,7 @@ Resources:
     Type: AWS::CloudFormation::Stack
     Properties:
       TemplateURL: ./hc_unicamp/template.yaml
+  HCRibeiraoPretoCrawlerFunction:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: ./hc_usp_ribeiraopreto/template.yaml

@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  hc_unicamp_crawler_function
+
+  Sample SAM Template for hc_unicamp_crawler_function
+
+Resources:
+  HcRibeiraoPretoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: hc_ribeirao_crawler_function/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Events:
+        DailyTrigger:
+          Type: Schedule
+          Properties:
+            Schedule: "cron(0 12 * * ? *)"  
